@@ -1,0 +1,20 @@
+diff --git a/AndroidProducts.mk b/AndroidProducts.mk
+index 13eeea7..0b26a07 100644
+--- a/AndroidProducts.mk
++++ b/AndroidProducts.mk
+@@ -22,6 +22,7 @@ PRODUCT_MAKEFILES := \
+     $(LOCAL_DIR)/car_x86_64.mk \
+     $(LOCAL_DIR)/gsi_car_arm64.mk \
+     $(LOCAL_DIR)/gsi_car_x86_64.mk \
++    $(LOCAL_DIR)/mc_car_x86_64.mk \
+ 
+ 
+ COMMON_LUNCH_CHOICES := \
+@@ -32,6 +33,7 @@ COMMON_LUNCH_CHOICES := \
+     car_x86_64-userdebug \
+     gsi_car_arm64-userdebug \
+     gsi_car_x86_64-userdebug \
++    mc_car_x86_64-userdebug \
+ 
+ 
+ EMULATOR_VENDOR_NO_SOUND_TRIGGER := false
