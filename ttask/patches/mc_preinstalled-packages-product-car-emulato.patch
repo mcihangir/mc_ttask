@@ -1,0 +1,239 @@
+diff --git a/Android.bp b/Android.bp
+old mode 100644
+new mode 100755
+diff --git a/AndroidProducts.mk b/AndroidProducts.mk
+index 13eeea7..c6824ba 100644
+--- a/AndroidProducts.mk
++++ b/AndroidProducts.mk
+@@ -22,6 +22,7 @@ PRODUCT_MAKEFILES := \
+     $(LOCAL_DIR)/car_x86_64.mk \
+     $(LOCAL_DIR)/gsi_car_arm64.mk \
+     $(LOCAL_DIR)/gsi_car_x86_64.mk \
++    $(LOCAL_DIR)/mc_car_x86.mk \
+ 
+ 
+ COMMON_LUNCH_CHOICES := \
+@@ -32,6 +33,7 @@ COMMON_LUNCH_CHOICES := \
+     car_x86_64-userdebug \
+     gsi_car_arm64-userdebug \
+     gsi_car_x86_64-userdebug \
++    mc_car_x86-userdebug \
+ 
+ 
+ EMULATOR_VENDOR_NO_SOUND_TRIGGER := false
+diff --git a/METADATA b/METADATA
+old mode 100644
+new mode 100755
+diff --git a/aosp_car_arm.mk b/aosp_car_arm.mk
+old mode 100644
+new mode 100755
+diff --git a/aosp_car_arm64.mk b/aosp_car_arm64.mk
+old mode 100644
+new mode 100755
+diff --git a/aosp_car_x86.mk b/aosp_car_x86.mk
+old mode 100644
+new mode 100755
+diff --git a/aosp_car_x86_64.mk b/aosp_car_x86_64.mk
+old mode 100644
+new mode 100755
+diff --git a/car_x86_64.mk b/car_x86_64.mk
+old mode 100644
+new mode 100755
+diff --git a/car_x86_64/manifest.ini b/car_x86_64/manifest.ini
+old mode 100644
+new mode 100755
+diff --git a/car_x86_64/overlay/overlay/frameworks/base/core/res/res/values/config.xml b/car_x86_64/overlay/overlay/frameworks/base/core/res/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/car_x86_64/source.properties b/car_x86_64/source.properties
+old mode 100644
+new mode 100755
+diff --git a/common/android.hardware.disable.xml b/common/android.hardware.disable.xml
+old mode 100644
+new mode 100755
+diff --git a/common/car.mk b/common/car.mk
+old mode 100644
+new mode 100755
+diff --git a/common/car_core_hardware.xml b/common/car_core_hardware.xml
+old mode 100644
+new mode 100755
+diff --git a/common/config.ini b/common/config.ini
+old mode 100644
+new mode 100755
+diff --git a/common/overlay/frameworks/base/core/res/res/values/config.xml b/common/overlay/frameworks/base/core/res/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/common/overlay/frameworks/base/core/res/res/values/vendor_policy_exempt_apps.xml b/common/overlay/frameworks/base/core/res/res/values/vendor_policy_exempt_apps.xml
+old mode 100644
+new mode 100755
+diff --git a/common/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml b/common/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+old mode 100644
+new mode 100755
+diff --git a/common/preinstalled-packages-product-car-emulator.xml b/common/preinstalled-packages-product-car-emulator.xml
+old mode 100644
+new mode 100755
+index a22118f..d857e68
+--- a/common/preinstalled-packages-product-car-emulator.xml
++++ b/common/preinstalled-packages-product-car-emulator.xml
+@@ -86,6 +86,13 @@
+         <install-in user-type="SYSTEM" />
+     </install-in-user-type>
+ 
++    <!-- Required when sysui queries for system user apps to handle the home intent -->
++    <install-in-user-type package="com.android.car.mccarlauncher">
++        <install-in user-type="FULL" />
++        <install-in user-type="SYSTEM" />
++    </install-in-user-type>
++
++
+     <!-- Required for RearViewCamera -->
+     <install-in-user-type package="com.google.android.car.rvc">
+         <install-in user-type="FULL" />
+diff --git a/common/sepolicy/dumpstate.te b/common/sepolicy/dumpstate.te
+old mode 100644
+new mode 100755
+diff --git a/common/sepolicy/file_contexts b/common/sepolicy/file_contexts
+old mode 100644
+new mode 100755
+diff --git a/common/sepolicy/hal_audio_caremu.te b/common/sepolicy/hal_audio_caremu.te
+old mode 100644
+new mode 100755
+diff --git a/common/sepolicy/system_server.te b/common/sepolicy/system_server.te
+old mode 100644
+new mode 100755
+diff --git a/common/vhaloverride/ev.car.json b/common/vhaloverride/ev.car.json
+old mode 100644
+new mode 100755
+diff --git a/common/vhaloverride/uxr.car.json b/common/vhaloverride/uxr.car.json
+old mode 100644
+new mode 100755
+diff --git a/emulator/aosp_car_emulator.mk b/emulator/aosp_car_emulator.mk
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/audio_policy_configuration.xml b/emulator/audio/audio_policy_configuration.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/car_audio_configuration.xml b/emulator/audio/car_audio_configuration.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/car_emulator_audio.mk b/emulator/audio/car_emulator_audio.mk
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/Android.bp b/emulator/audio/driver/Android.bp
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/android.hardware.audio@6.0-impl.xml b/emulator/audio/driver/android.hardware.audio@6.0-impl.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/audio_hw.c b/emulator/audio/driver/audio_hw.c
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/audio_hw.h b/emulator/audio/driver/audio_hw.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/audio_vbuffer.c b/emulator/audio/driver/audio_vbuffer.c
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/audio_vbuffer.h b/emulator/audio/driver/audio_vbuffer.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/ext_pcm.c b/emulator/audio/driver/ext_pcm.c
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/ext_pcm.h b/emulator/audio/driver/ext_pcm.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/driver/include/audio_hw_control.h b/emulator/audio/driver/include/audio_hw_control.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/Android.bp b/emulator/audio/halservice/Android.bp
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/AudioControl.cpp b/emulator/audio/halservice/AudioControl.cpp
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/AudioControl.h b/emulator/audio/halservice/AudioControl.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/PowerPolicyClient.cpp b/emulator/audio/halservice/PowerPolicyClient.cpp
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/PowerPolicyClient.h b/emulator/audio/halservice/PowerPolicyClient.h
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/android.hardware.audio.service-caremu.rc b/emulator/audio/halservice/android.hardware.audio.service-caremu.rc
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/audiocontrol-caremu.xml b/emulator/audio/halservice/audiocontrol-caremu.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/halservice/service.cpp b/emulator/audio/halservice/service.cpp
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/overlay/frameworks/base/core/res/res/values/config.xml b/emulator/audio/overlay/frameworks/base/core/res/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/audio/overlay/packages/services/Car/service/res/values/config.xml b/emulator/audio/overlay/packages/services/Car/service/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/cluster/display_settings.xml b/emulator/cluster/display_settings.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/cluster/osdouble_overlay/packages/services/Car/service/res/values/config.xml b/emulator/cluster/osdouble_overlay/packages/services/Car/service/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/cluster/overlay/packages/services/Car/service/res/values/config.xml b/emulator/cluster/overlay/packages/services/Car/service/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/emulator/rotary/car_rotary.mk b/emulator/rotary/car_rotary.mk
+old mode 100644
+new mode 100755
+diff --git a/generic_car_x86/BoardConfig.mk b/generic_car_x86/BoardConfig.mk
+old mode 100644
+new mode 100755
+diff --git a/generic_car_x86_64/BoardConfig.mk b/generic_car_x86_64/BoardConfig.mk
+old mode 100644
+new mode 100755
+diff --git a/gsi_car_arm64.mk b/gsi_car_arm64.mk
+old mode 100644
+new mode 100755
+diff --git a/gsi_car_base.mk b/gsi_car_base.mk
+old mode 100644
+new mode 100755
+index 85d1277..8f3af6f
+--- a/gsi_car_base.mk
++++ b/gsi_car_base.mk
+@@ -57,6 +57,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+     system/etc/permissions/com.android.car.activityresolver.xml \
+     system/etc/permissions/com.android.car.bugreport.xml \
+     system/etc/permissions/com.android.car.carlauncher.xml \
++    system/etc/permissions/com.android.car.mccarlauncher.xml \
+     system/etc/permissions/com.android.car.cluster.home.xml \
+     system/etc/permissions/com.android.car.dialer.xml \
+     system/etc/permissions/com.android.car.hvac.xml \
+@@ -105,6 +106,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+     system/priv-app/CarDialerApp/CarDialerApp.apk \
+     system/priv-app/CarHvacApp/CarHvacApp.apk \
+     system/priv-app/CarLauncher/CarLauncher.apk \
++    system/priv-app/CarLauncher/MCCarLauncher.apk \
+     system/priv-app/CarMediaApp/CarMediaApp.apk \
+     system/priv-app/CarMessengerApp/CarMessengerApp.apk \
+     system/priv-app/CarRadioApp/CarRadioApp.apk \
+diff --git a/gsi_car_x86_64.mk b/gsi_car_x86_64.mk
+old mode 100644
+new mode 100755
+diff --git a/setup/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml b/setup/overlay/frameworks/base/packages/SettingsProvider/res/values/defaults.xml
+old mode 100644
+new mode 100755
+diff --git a/setup/overlay/packages/services/Car/service/res/values/config.xml b/setup/overlay/packages/services/Car/service/res/values/config.xml
+old mode 100644
+new mode 100755
+diff --git a/tools/README.md b/tools/README.md
+old mode 100644
+new mode 100755
+diff --git a/tools/aaos-sys-img2-1.xml b/tools/aaos-sys-img2-1.xml
+old mode 100644
+new mode 100755
+diff --git a/tools/x86_64/devices.xml b/tools/x86_64/devices.xml
+old mode 100644
+new mode 100755

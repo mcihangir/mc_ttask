@@ -1,0 +1,37 @@
+diff --git a/res/layout/car_bottom_system_bar.xml b/res/layout/car_bottom_system_bar.xml
+old mode 100644
+new mode 100755
+index f8efd59..3c1c82a
+--- a/res/layout/car_bottom_system_bar.xml
++++ b/res/layout/car_bottom_system_bar.xml
+@@ -56,7 +56,7 @@
+             <com.android.systemui.car.systembar.CarSystemBarButton
+                 android:id="@+id/home"
+                 style="@style/SystemBarButton"
+-                systemui:componentNames="com.android.car.carlauncher/.CarLauncher"
++                systemui:componentNames="com.android.car.mccarlauncher/.MCCarLauncher"
+                 systemui:highlightWhenSelected="true"
+                 systemui:icon="@drawable/car_ic_home"
+                 systemui:intent="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.HOME;launchFlags=0x14000000;end"/>
+@@ -76,7 +76,7 @@
+                 systemui:componentNames="@string/config_appGridComponentName"
+                 systemui:highlightWhenSelected="true"
+                 systemui:icon="@drawable/car_ic_apps"
+-                systemui:intent="intent:#Intent;action=com.android.car.carlauncher.ACTION_APP_GRID;package=com.android.car.carlauncher;launchFlags=0x24000000;end"
++                systemui:intent="intent:#Intent;action=com.android.car.mccarlauncher.ACTION_APP_GRID;package=com.android.car.mccarlauncher;launchFlags=0x24000000;end"
+                 systemui:clearBackStack="true"/>
+ 
+             <com.android.systemui.car.systembar.CarSystemBarButton
+@@ -136,9 +136,9 @@
+         <com.android.systemui.car.systembar.CarSystemBarButton
+             android:id="@+id/home"
+             style="@style/SystemBarButton"
+-            systemui:componentNames="com.android.car.carlauncher/.CarLauncher"
++            systemui:componentNames="com.android.car.mccarlauncher/.MCCarLauncher"
+             systemui:highlightWhenSelected="true"
+             systemui:icon="@drawable/car_ic_home"
+             systemui:intent="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.HOME;launchFlags=0x14000000;end"/>
+     </LinearLayout>
+-</com.android.systemui.car.systembar.CarSystemBarView>
+\ No newline at end of file
++</com.android.systemui.car.systembar.CarSystemBarView>

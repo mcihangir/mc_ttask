@@ -1,0 +1,20 @@
+diff --git a/data/etc/car/Android.bp b/data/etc/car/Android.bp
+old mode 100644
+new mode 100755
+index 084e1db..1b1bf9b
+--- a/data/etc/car/Android.bp
++++ b/data/etc/car/Android.bp
+@@ -67,6 +67,13 @@ prebuilt_etc {
+ }
+ 
+ prebuilt_etc {
++    name: "allowed_privapp_com.android.car.mccarlauncher",
++    sub_dir: "permissions",
++    src: "com.android.car.mccarlauncher.xml",
++    filename_from_src: true,
++}
++
++prebuilt_etc {
+     name: "allowed_privapp_com.android.car.dialer",
+     sub_dir: "permissions",
+     src: "com.android.car.dialer.xml",

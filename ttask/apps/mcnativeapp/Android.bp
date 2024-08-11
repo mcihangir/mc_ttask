@@ -1,0 +1,14 @@
+cc_binary{
+	name: "mcnativeapp",
+	//relative_install_path: "hw",
+	//system_ext_specific: true, //goes to /system_ext
+	//default (non specify) = goes to /system
+	init_rc: ["mcnativeapp.rc"],
+	header_libs: [
+		"liblog_headers"
+	],
+	srcs: [ "src/mcnativeapp.cpp"],
+	shared_libs: [ "liblog" ],
+    //vendor: true,
+    //proprietary: true,
+}

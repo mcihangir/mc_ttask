@@ -1,0 +1,10 @@
+# Usage: import this file to system/core/rootdir/init.rc
+# import /system/etc/init/mcdevice.rc
+
+import /system/etc/init/mcnativeapp.rc
+
+on property:sys.boot_completed=1
+	write /dev/kmsg "mcdevice: on property:sys.boot_completed=1"
+
+on boot 
+	write /dev/kmsg "mcdevice: on boot"

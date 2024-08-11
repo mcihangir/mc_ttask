@@ -1,0 +1,49 @@
+prebuilt_etc {
+    name: "privapp_whitelist_com.mc.mcandroidautoapp",
+    sub_dir: "permissions",
+    src: "com.mc.mcandroidautoapp.xml",
+    filename_from_src: true,
+}
+
+android_app {
+    name: "mcandroidautoapp",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+
+    static_libs: [
+        "car-service-test-static-lib",
+        "com.google.android.material_material",
+        "androidx.appcompat_appcompat",
+        "car-ui-lib",
+        "android.hidl.base-V1.0-java",
+        "android.hardware.automotive.vehicle-V2.0-java",
+        "vehicle-hal-support-lib-for-test",
+        "com.android.car.keventreader-client",
+        "guava",
+        "android.car.cluster.navigation",
+        "car-experimental-api-static-lib",
+    ],
+    libs: ["android.car"],
+
+    required: ["privapp_whitelist_com.mc.mcandroidautoapp"],
+
+    optimize: {
+        enabled: false,
+    },
+
+    dex_preopt: {
+        enabled: false,
+    },
+
+    product_variables: {
+        pdk: {
+            enabled: false,
+        },
+    },
+}
+
+

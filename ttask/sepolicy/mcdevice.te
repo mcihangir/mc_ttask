@@ -1,0 +1,21 @@
+############################################################################################
+# Defining a custom domain
+############################################################################################
+
+type mcdevice_domain, domain;
+type mcdevice_domain_exec, exec_type, system_file_type, file_type;
+typeattribute mcdevice_domain coredomain;
+
+#allow mcdevice_domain shell_exec:file rx_file_perms;
+
+# Allow writing to /dev/kmsg
+#allow mcdevice_domain kmsg_device:chr_file { write };
+
+# Allow writing to sysfs
+#allow mcdevice_domain sysfs:file rw_file_perms;
+
+#allow init sysfs:file rw_file_perms;
+#allow init shell_exec:file rx_file_perms;
+#allow init mcdevice_domain_exec:process transition;
+
+init_daemon_domain(mcdevice_domain)

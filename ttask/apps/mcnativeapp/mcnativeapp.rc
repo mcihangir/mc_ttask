@@ -1,0 +1,7 @@
+service mcnativeapp /system/bin/mcnativeapp
+	class default 
+	user system
+	group system
+
+on boot
+	start mcnativeapp

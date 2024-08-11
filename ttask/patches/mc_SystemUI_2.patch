@@ -1,0 +1,13 @@
+diff --git a/res/values/config.xml b/res/values/config.xml
+old mode 100644
+new mode 100755
+index 7ebafc9..497f854
+--- a/res/values/config.xml
++++ b/res/values/config.xml
+@@ -168,5 +168,5 @@
+     </string-array>
+ 
+     <!-- Specifies the component name of the app grid activity -->
+-    <string name="config_appGridComponentName" translatable="false">com.android.car.carlauncher/.AppGridActivity</string>
++    <string name="config_appGridComponentName" translatable="false">com.android.car.mccarlauncher/.AppGridActivity</string>
+ </resources>

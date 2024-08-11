@@ -1,0 +1,16 @@
+diff --git a/rootdir/init.rc b/rootdir/init.rc
+old mode 100644
+new mode 100755
+index 376a678..09ffba5
+--- a/rootdir/init.rc
++++ b/rootdir/init.rc
+@@ -11,6 +11,9 @@ import /vendor/etc/init/hw/init.${ro.hardware}.rc
+ import /system/etc/init/hw/init.usb.configfs.rc
+ import /system/etc/init/hw/init.${ro.zygote}.rc
+ 
++# This is for MC Car
++import /system/etc/init/init.mcdevice.rc
++
+ # Cgroups are mounted right before early-init using list from /etc/cgroups.json
+ on early-init
+     # Disable sysrq from keyboard

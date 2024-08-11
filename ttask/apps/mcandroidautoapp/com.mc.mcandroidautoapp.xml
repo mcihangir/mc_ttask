@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.mc.mcandroidautoapp">
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.ACTIVITY_EMBEDDING"/>
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+        <permission name="android.permission.INJECT_EVENTS"/>
+        <!-- use for CarServiceUnitTest and CarServiceTest -->
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <!-- use for CarServiceUnitTest -->
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <permission name="android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"/>
+        <permission name="android.permission.LOCATION_HARDWARE"/>
+        <permission name="android.permission.MANAGE_USB"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <!-- use for CarServiceTest -->
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+        <permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.MONITOR_INPUT"/>
+        <permission name="android.permission.PROVIDE_TRUST_AGENT"/>
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.REBOOT"/>
+        <!-- use for CarServiceTest -->
+        <permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+
+        <!-- use for rotary fragment to enable/disable packages related to rotary -->
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+  
+  
+        <!-- Added by MC -->
+	<permission name="android.car.permission.CAR_PROJECTION"/>
+	<permission name="android.car.permission.CAR_CONTROL_AUDIO_SETTINGS"/>
+	<permission name="android.car.permission.CAR_CONTROL_AUDIO_VOLUME"/>
+	<permission name="android.car.permission.CAR_UX_RESTRICTIONS_CONFIGURATION"/>
+	<permission name="android.car.permission.CAR_DIAGNOSTICS"/>
+	<permission name="android.car.permission.CAR_INSTRUMENT_CLUSTER_CONTROL"/>
+	<permission name="android.car.permission.VMS_SUBSCRIBER"/>
+	<permission name="android.car.permission.STORAGE_MONITORING"/>
+	<permission name="android.car.permission.VMS_PUBLISHER"/>
+	<permission name="android.car.permission.GET_CAR_VENDOR_CATEGORY_INFO"/>
+	<permission name="android.car.permission.GET_CAR_VENDOR_CATEGORY_SEAT"/>
+	<permission name="android.car.permission.CAR_MOCK_VEHICLE_HAL"/>
+	<permission name="android.car.permission.READ_CAR_STEERING"/>
+	<permission name="android.car.permission.CAR_DRIVING_STATE"/>
+	<permission name="android.car.permission.CONTROL_CAR_CLIMATE"/>
+	<permission name="android.car.permission.CAR_TEST_SERVICE"/>
+	<permission name="android.car.permission.CAR_POWER"/>
+	<permission name="android.car.permission.SET_CAR_VENDOR_CATEGORY_INFO"/>
+	<permission name="android.car.permission.CAR_DYNAMICS_STATE"/>
+	<permission name="android.car.permission.CAR_NAVIGATION_MANAGER"/>
+	<permission name="android.car.permission.ACCESS_CAR_PROJECTION_STATUS"/>
+	<permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<permission name="android.permission.ACCESS_FINE_LOCATION"/>
+	<permission name="android.permission.ACCESS_NETWORK_STATE"/>
+	<permission name="android.permission.ACCESS_VOICE_INTERACTION_SERVICE"/>
+	<permission name="android.permission.ACCESS_WIFI_STATE"/>
+	<permission name="android.permission.ACTIVITY_EMBEDDING"/>
+	<permission name="android.permission.BLUETOOTH"/>
+	<permission name="android.permission.BLUETOOTH_ADMIN"/>
+	<permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+	<permission name="android.permission.CHANGE_NETWORK_STATE"/>
+	<permission name="android.permission.CHANGE_WIFI_STATE"/>
+	<permission name="android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS"/>
+	<permission name="android.permission.INJECT_EVENTS"/>
+	<permission name="android.permission.INTERACT_ACROSS_USERS"/>
+	<permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+	<permission name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+	<permission name="android.permission.LOCATION_HARDWARE"/>
+	<permission name="android.permission.MANAGE_USB"/>
+	<permission name="android.permission.MANAGE_USERS"/>
+	<permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+	<permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+	<permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
+	<permission name="android.permission.MODIFY_PHONE_STATE"/>
+	<permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+	<permission name="android.permission.PROVIDE_TRUST_AGENT"/>
+	<permission name="android.permission.QUERY_ALL_PACKAGES"/>
+	<permission name="android.permission.READ_LOGS"/>
+	<permission name="android.permission.READ_SMS"/>
+	<permission name="android.permission.REAL_GET_TASKS"/>
+	<permission name="android.permission.REBOOT"/>
+	<permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<permission name="android.permission.SEND_SMS"/>
+	<permission name="android.permission.MONITOR_INPUT"/>
+	<permission name="android.permission.SET_ACTIVITY_WATCHER"/>
+	<permission name="android.permission.USE_FULL_SCREEN_INTENT"/>
+	<permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+	<permission name="android.permission.WRITE_SETTINGS"/>
+	<permission name="android.car.permission.GET_CAR_VENDOR_CATEGORY_SEAT"/>
+	<permission name="android.car.permission.GET_CAR_VENDOR_CATEGORY_INFO"/>
+	<permission name="android.car.permission.SET_CAR_VENDOR_CATEGORY_INFO"/>
+	<permission name="android.car.permission.CONTROL_CAR_FEATURES"/>
+	<permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <!-- Add this line -->
+        <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+	<permission name="android.car.permission.CAR_VENDOR_EXTENSION"/>
+	<permission name="android.car.permission.CAR_MILEAGE"/>
+	<permission name="android.car.permission.CAR_DISPLAY_IN_CLUSTER"/>
+	<permission name="android.car.permission.CAR_PERMISSION"/>
+
+    </privapp-permissions>
+</permissions>
